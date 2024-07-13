@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "random-wikipedia-article"
+version = "0.1.0"
+description = "Display extracts from random Wikipedia articles"
+keywords = ["wikipedia"]
+authors = ["krishnamohan-seelam <krishnamohan.seelam@outlook.com>"]
+readme = "README.md"
+packages = [{include = "random_wikipedia_article", from = "src"}]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Topic :: Games/Entertainment :: Fortune Cookies",
+]
+repository = "https://github.com/krishnamohan-seelam/random-wikipedia-article"
+documentation = "https://readthedocs.io/random-wikipedia-article"
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+rich = "^13.7.1"
+httpx = {version = ">=0.27.0", extras = ["http2"]}
+importlib-metadata = {version = ">=6.7.0", python = "<3.8"}
+
+[tool.poetry.urls]
+Issues = "https://github.com/krishnamohan-seelam/random-wikipedia-article/issues"
+
+[tool.poetry.scripts]
+random-wikipedia-article = "random_wikipedia_article.__main__:run"
+
+
+[tool.poetry.group.tests.dependencies]
+pytest = "^8.2.2"
+pytest-sugar = "^1.0.0"
+
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.3.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
